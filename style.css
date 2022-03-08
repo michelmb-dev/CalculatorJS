@@ -1,0 +1,127 @@
+/* RESET */
+* {
+	box-sizing: border-box;
+	font-family: "Saira Stencil One", cursive;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+/* BASE */
+:root {
+	--dark: #314564;
+	--darker: #1b2633;
+	--darkest: #11141f;
+	--light: #eee;
+	--cian: #02ffea;
+	--orange: #ff6600;
+	--red: #ff0000;
+	--green: #00ff00;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--dark);
+	color: var(--light);
+}
+
+/* CALCULATOR */
+.calculator {
+	background: var(--darker);
+	padding: 1rem;
+	border: 4px outset var(--darker);
+	border-radius: 0.5rem;
+}
+
+.display {
+	outline: none;
+	border: 4px inset var(--dark);
+	border-radius: 0.5rem;
+	background: var(--darkest);
+	color: var(--cian);
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	text-align: right;
+	width: 100%;
+}
+
+.display::placeholder {
+	color: var(--cian);
+	opacity: 0.5;
+}
+
+.title {
+	padding: 0.5rem 0;
+	text-transform: uppercase;
+	color: var(--red);
+}
+
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem;
+	border: 4px inset var(--dark);
+	border-radius: 4px;
+}
+
+.buttons--math {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.5rem;
+}
+
+.buttons--num {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+.btn,
+.btn--clean,
+.btn--sqrt,
+.btn--equal,
+.btn--percent {
+	background: var(--dark);
+	color: var(--light);
+	font-size: 1.2rem;
+	border-radius: 0.5rem;
+	border: 2px outset var(--dark);
+	cursor: pointer;
+	transition: all 0.3s linear;
+	opacity: 0.8;
+	width: 3.5rem;
+}
+
+.btn i {
+	font-size: 1.25rem;
+	pointer-events: none;
+}
+
+.btn:active,
+.btn--clean:active,
+.btn--sqrt:active,
+.btn--percent:active,
+.btn--equal:active {
+	border: 2px inset var(--dark);
+}
+
+.btn:hover,
+.btn--clean:hover,
+.btn--percent:hover,
+.btn--equal:hover {
+	opacity: 1;
+}
+
+.btn--clean {
+	background: var(--orange);
+	border-color: var(--orange);
+}
+
+.btn--equal {
+	background: var(--green);
+	border-color: var(--green);
+}
